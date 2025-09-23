@@ -1,0 +1,140 @@
+FM_EQ_D,Sub_group,Board_group
+AEOLIAN DEPOSITS,wind,weathering
+AILLEAG DIAMICTON FORMATION,river,hydrological
+ALNE GLACIOLACUSTRINE FORMATION,lakes,hydrological
+ALTURLIE GRAVELS FORMATION,gravel,petrological
+ARDERSIER SILTS FORMATION,Silt,petrological
+ARDVERIKIE TILL FORMATION,glacier,hydrological
+ARUN FORMATION,river,hydrological
+ASSYNT GLACIGENIC FORMATION,glacier,hydrological
+BAGINTON SAND AND GRAVEL FORMATION,river,hydrological
+BALLAUGH FORMATION,gravel,petrological
+BANCHORY TILL FORMATION,river,hydrological
+BANK FARM SAND AND GRAVEL,Anthropogentic,Anthropogentic
+BEINN AN UAIN TILL FORMATION,glacier,hydrological
+BENHOLM CLAY FORMATION,river,hydrological
+BLAIRDAFF MORAINE FORMATION,pit,landforms
+BREIGHTON SAND FORMATION,Sand,petrological
+BREWOOD TILL FORMATION,glacier,hydrological
+BREYDON FORMATION,river,hydrological
+BRITON'S LANE FORMATION,Anthropogentic,Anthropogentic
+BURTLE FORMATION,marine,hydrological
+BYTHAM SAND AND GRAVEL FORMATION,river,hydrological
+CADDER SAND AND GRAVEL FORMATION,Sand_gravel,petrological
+CAESAR'S CAMP GRAVEL FORMATION,gravel,petrological
+CEARDAICH SAND AND GRAVEL FORMATION,Sand_gravel,petrological
+CHAPELKNOWE TILL FORMATION,glacier,hydrological
+CHELSFIELD GRAVEL FORMATION,gravel,petrological
+CHEMICAL DEPOSITS,chemical,weathering
+CHORLEYWOOD GRAVEL FORMATION,gravel,petrological
+CLAY,clay,petrological
+CODDINGTON TILL FORMATION,glacier,hydrological
+COLCHESTER FORMATION,river,hydrological
+COLWALL GELIFLUCTATE FORMATION,stratified,geological
+CULLIVAIT SILTS FORMATION,Silt,petrological
+CURRAGH FORMATION,peat,organic
+DALSWINTON MORAINE FORMATION,glacier,hydrological
+DRUMLITHIE SAND AND GRAVEL FORMATION,Sand_gravel,petrological
+EASTERN YAR RIVER FORMATION,river,hydrological
+ELVINGTON GLACIOLACUSTRINE FORMATION,glacier,hydrological
+FARNHAM GLACIOFLUVIAL FORMATION,glacier,hydrological
+FENLAND FORMATION,remove,remove
+FINGLACK TILL FORMATION,glacier,hydrological
+FLUVIAL DEPOSITS,river,hydrological
+GAICK PLATEAU MORAINE FORMATION,ridges,landforms
+GLACIAL DEPOSITS,glacier,hydrological
+GLACIGENIC DEPOSITS,glacier,hydrological
+GLACIOFLUVIAL DEPOSITS,glacier,hydrological
+GLACIOLACUSTRINE DEPOSITS,glacier,hydrological
+GLEN BALLEIRA FORMATION,peat,organic
+GLEN DYE SILTS FORMATION,Silt,petrological
+GLYNCH VALLEY FORMATION,river,hydrological
+GRANGE HILL SAND FORMATION,Sand,petrological
+GREAT EASBY CLAY FORMATION,clay,petrological
+GRETNA TILL FORMATION,glacier,hydrological
+HAPPISBURGH GLACIGENIC FORMATION,glacier,hydrological
+HARROGATE TILL FORMATION,glacier,hydrological
+HATTON TILL FORMATION,glacier,hydrological
+HEMINGBROUGH GLACIOLACUSTRINE FORMATION,glacier,hydrological
+HOLDERNESS FORMATION,remove,remove
+INGHAM SAND AND GRAVEL FORMATION,Sand_gravel,petrological
+JURBY FORMATION,river,hydrological
+KENN FORMATION,glacier,hydrological
+KENNET VALLEY FORMATION,river,hydrological
+KERR MORAINE FORMATION,ridges,landforms
+KILBLANE SAND AND GRAVEL FORMATION,Sand_gravel,petrological
+KIPPET HILLS GRAVELS FORMATION,Sand_gravel,petrological
+KIRK BURN SILT FORMATION,Silt,petrological
+KIRKBEAN SAND AND GRAVEL FORMATION,Sand_gravel,petrological
+LACUSTRINE DEPOSITS,lakes,hydrological
+LANGHOLM TILL FORMATION,glacier,hydrological
+LETCHWORTH GRAVELS FORMATION,gravel,petrological
+LEYS GRAVEL FORMATION,gravel,petrological
+LINN OF PATTACK SILT FORMATION,Silt,petrological
+LITTLE HEREFORD SAND AND GRAVEL,Sand_gravel,petrological
+LOCH BROOM TILL FORMATION,glacier,hydrological
+LOCHTON SAND AND GRAVEL FORMATION,Sand_gravel,petrological
+LOWESTOFT FORMATION,glacier,hydrological
+MAIDENHEAD FORMATION,river,hydrological
+MARINE AND COASTAL ZONE DEPOSITS,marine,hydrological
+MASS MOVEMENT DEPOSITS,mass movement,geological
+MATHON SAND AND GRAVEL FORMATION,Sand_gravel,petrological
+MEDINA RIVER FORMATION,river,hydrological
+MEDWAY VALLEY FORMATION,river,hydrological
+MILL OF FOREST TILL FORMATION,glacier,hydrological
+MILTON SAND,sand,petrological
+MOULDY HILLS GRAVEL FORMATION,gravel,petrological
+NAR VALLEY FORMATION,river,hydrological
+NENE VALLEY FORMATION,river,hydrological
+NO PARENT,remove,remove
+NORTH DENES FORMATION,coastal,hydrological
+NORTHERN DRIFT FORMATION,remove,remove
+NOT APPLICABLE,remove,remove
+ORGANIC DEPOSITS,organic,organic
+ORRISDALE FORMATION,stratified,geological
+"OUSE VALLEY FORMATION (BUCKS, BEDS, CAMBS AND NORFOLK)",river,hydrological
+PATTACK TILL FORMATION,glacier,hydrological
+PETROCKSTOW VALLEY FORMATION,river,hydrological
+PLUMPE SAND AND GRAVEL FORMATION,Sand_gravel,petrological
+POCKLINGTON GRAVEL FORMATION,gravel,petrological
+POINT OF AYRE FORMATION,hydrological,hydrological
+RAISED LACUSTRINE GRAVEL BEACH DEPOSITS,river,hydrological
+RAISED MARINE DEPOSITS,marine,hydrological
+REAY BURN TILL FORMATION,glacier,hydrological
+RECLAIMED DEPOSITS,remove,remove
+RECLAIMED GROUND,river,hydrological
+REISGILL BURN TILL FORMATION,glacier,hydrological
+RESIDUAL DEPOSITS,remove,remove
+SATWELL GRAVEL FORMATION,gravel,petrological
+SEVERN VALLEY FORMATION,river,hydrological
+SHAKENHURST SAND AND GRAVEL,Sand_gravel,petrological
+SHELLAG FORMATION,glacier,hydrological
+SHERINGHAM CLIFFS FORMATION,glacier,hydrological
+SHIRDLEY HILL SAND FORMATION,sand,petrological
+SLEA VALLEY FORMATION,river,hydrological
+SNAEFELL FORMATION,river,hydrological
+SOAR VALLEY FORMATION,river,hydrological
+SOLENT RIVER FORMATION,river,hydrological
+SOLWAY ESK VALLEY FORMATION,river,hydrological
+STANMORE GRAVEL FORMATION,gravel,petrological
+SUDBURY FORMATION,river,hydrological
+SULBY GLEN FORMATION,river,hydrological
+SUPERFICIAL DEPOSITS,remove,remove
+SUSSEX ROTHER FORMATION,river,hydrological
+SUTTON SAND FORMATION,Sand,petrological
+TAW VALLEY FORMATION,river,hydrological
+THAMES VALLEY FORMATION,river,hydrological
+TORRIDGE VALLEY FORMATION,river,hydrological
+TRENT VALLEY FORMATION,river,hydrological
+TYNE AND WEAR GLACIOLACUSTRINE FORMATION,glacier,hydrological
+UGIE CLAY FORMATION,glacier,hydrological
+ULLAPOOL GRAVEL FORMATION,glacier,hydrological
+URY SILTS FORMATION,hydrological,hydrological
+VALE OF YORK FORMATION,glacier,hydrological
+WARWICKSHIRE AVON VALLEY FORMATION,river,hydrological
+WELL HILL GRAVEL FORMATION,hill,landforms
+WESTERN YAR RIVER FORMATION,river,hydrological
+WHITEHILLS GLACIGENIC FORMATION,glacier,hydrological
+WOLSTON FORMATION,glacier,hydrological
+WOODFORD GRAVEL FORMATION,glacier,hydrological
+WOOFFERTON SAND AND GRAVEL,remove,remove
