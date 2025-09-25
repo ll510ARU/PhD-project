@@ -44,7 +44,7 @@ Seasonality_TEM$DN <- (Seasonality_TEM$DN/100)
 # STEP 3: Rename the column and save the file
 colnames(Seasonality_TEM)[colnames(Seasonality_TEM) == "DN"]<- "Tem_Season"
 Seasonality_TEM <- Seasonality_TEM %>% group_by(tile_name_2) %>% summarize(Tem_Season = mean(Tem_Season))
-write.csv(Seasonality_10km_TEM, "Seasonality_10km_TEM.csv")
+write.csv(Seasonality_10km_TEM, "Seasonality_TEM.csv")
 
 
 ### Seasonality Precipitation ### -------------
@@ -61,6 +61,7 @@ Seasonality_Prec$DN <- (Seasonality_Prec$DN/100)
 # STEP 3: Rename the column and save the file
 colnames(Seasonality_Prec)[colnames(Seasonality_Prec) == "DN"]<- "Prec_Season"
 Seasonality_Prec <- Seasonality_Prec %>% group_by(tile_name_2) %>% summarize(Prec_Season = mean(Prec_Season))
-write.csv(Seasonality_Prec, "Seasonality_Prec_TEM.csv")
+write.csv(Seasonality_Prec, "Seasonality_Prec.csv")
+
 
 
