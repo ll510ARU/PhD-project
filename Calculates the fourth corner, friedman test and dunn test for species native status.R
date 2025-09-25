@@ -29,7 +29,7 @@ library(dunn.test)
 
 ### NATIVE SPECIES ### -----
 
-#STEP 2: SELECT SPECIES OCCURRENCE FOR NATIVR SPECIES 
+#STEP 2: SELECT SPECIES OCCURRENCE FOR NATIVE SPECIES 
 
 column_list <- species_Tra_NATIVE$Accepted_names
 species_occ_rm_id_NATIVE <- species_occ[, names(species_occ) %in% column_list]
@@ -49,7 +49,7 @@ dataset_list_NATIVE <- list(
   traits = species_Tra_NATIVE)
 
 
-#STEP 6: PERFORM THE FOURTHCORNER ANALYSIS FOR NATIVE SPECIES 
+#STEP 6: PERFORM THE FOURTH-CORNER ANALYSIS FOR NATIVE SPECIES 
 FCA2_NATIVE_ <- fourthcorner(dataset_list_NATIVE$Envi, dataset_list_NATIVE$abu, dataset_list_NATIVE$traits,nrepet=999, modeltype=2)
 FCA4_NATIVE_ <- fourthcorner(dataset_list_NATIVE$Envi, dataset_list_NATIVE$abu, dataset_list_NATIVE$traits,nrepet=999, modeltype=4)
 four.comb_NAtive_ <- combine.4thcorner(FCA2_NATIVE_, FCA4_NATIVE_)
@@ -60,7 +60,7 @@ write.csv(FCANat, "FCANat3.csv")
 
 ### ARCHAEOPHYTES ### -----
 
-# STEP 7: SELECT SPECIES OCCURRENCE FOR NATIVR SPECIES 
+# STEP 7: SELECT SPECIES OCCURRENCE FOR NATIVE SPECIES 
 
 column_list <- species_Tra_aro$Accepted_names
 species_occ_rm_id_aro <- species_occ[, names(species_occ) %in% column_list]
@@ -82,7 +82,7 @@ dataset_list_aro <- list(
   traits = species_Tra_aro)
 
 
-# STEP 11: PERFORM THE FOURTHCORNER ANALYSIS FOR ARCHAEOPHYTES
+# STEP 11: PERFORM THE FOURTH-CORNER ANALYSIS FOR ARCHAEOPHYTES
 FCA2_ARCO_ <- fourthcorner(dataset_list_aro$Envi, dataset_list_aro$abu, dataset_list_aro$traits,nrepet=999, modeltype=2)
 FCA4_ARCO_ <- fourthcorner(dataset_list_aro$Envi, dataset_list_aro$abu, dataset_list_aro$traits,nrepet=999, modeltype=4)
 four.comb_aro_ <- combine.4thcorner(FCA2_ARCO_, FCA4_ARCO_)
@@ -114,7 +114,7 @@ dataset_list_Neo <- list(
   traits = species_Tra_Neo)
 
 
-# STEP 16: PERFORM THE FOURTHCORNER ANALYSIS FOR NEOPHYTES
+# STEP 16: PERFORM THE FOURTH-CORNER ANALYSIS FOR NEOPHYTES
 FCA2_Neo_ <- fourthcorner(dataset_list_Neo$Envi, dataset_list_Neo$abu, dataset_list_Neo$traits,nrepet=999, modeltype=2)
 FCA4_Neo_ <- fourthcorner(dataset_list_Neo$Envi, dataset_list_Neo$abu, dataset_list_Neo$traits,nrepet=999, modeltype=4)
 four.comb_Neo_ <- combine.4thcorner(FCA2_Neo_, FCA4_Neo_)
@@ -165,12 +165,12 @@ write.csv(PH, "DUnn_test_results_NSc.csv")
 
 
 
-### NATIVE STATUS FOUTH CORNER CORELATION GRAPH### ----
+### NATIVE STATUS FOURTH-CORNER CORELATION GRAPH### ----
 
 # STEP 22: ORDER NATIVE STATUS
 NS_ANALYSIS$GROUP <- factor(NS_ANALYSIS$GROUP, levels = c("NAT", "ARO", "NEO"))
 
-# STEP 23: CREATE A GRAPH FOR EACH TRAIT
+# STEP 23:  CREATE A GRAPH FOR EACH TRAIT OF THE FOURTH CORNER RELATIONSHIPS - this loop automatically generates the individual graphs
 plots <- list()
 for (trait in unique(NS_ANALYSIS$Trait)) {
   plot <- ggplot(subset(NS_ANALYSIS, Trait == trait), aes(x = Land, y = Obs, fill = GROUP)) +
@@ -188,3 +188,4 @@ for (trait in unique(NS_ANALYSIS$Trait)) {
   # Save each plot as a PNG file
   ggsave(paste("plot_", trait, ".png", sep = ""), plot, width = 6, height = 4, units = "in")
 }
+
