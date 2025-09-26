@@ -248,6 +248,8 @@ resolve_SLA_EX5 <- SLA_EX5$species  %>% gnr_resolve(data_source_ids = c(167), wi
 resolve_SLA_EX <- rbind(resolve_SLA_EX1, resolve_SLA_EX2,
                         resolve_SLA_EX3, resolve_SLA_EX4, resolve_SLA_EX5)
 
+# mannually check the unresolved names
+
 #Copies the column matched_name2 (resolved names) into a new column FillAccepted_names.
 SLA_EX_in<- resolve_SLA_EX %>% filter(matched_name2 %in% names)
 SLA_in <-  SLA_unique %>% filter(SLA_unique %in% names)
@@ -367,6 +369,7 @@ Vascular_plants_list_SLA <- select(Vascular_plants_list_SLA, -mean_value)
 
 # Inserts results into Vascular_plants_list
 Vascular_plants_list_SLA <- merge(Vascular_plants_list_SLA, resolved_SLA_mean, by = "species", all.x = TRUE)
+
 
 
 
