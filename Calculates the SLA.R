@@ -360,11 +360,12 @@ resolved_SLA_mean <- resolved_SLA %>%
 # standardise label
 resolved_SLA_mean <- resolved_SLA_mean %>%
   rename(species = Accepted_names)
-VasTraitWP_ALDMC_LEDA <- select(VasTraitWP_ALDMC_LEDA, -mean_value)
+Vascular_plants_list_SLA <- select(Vascular_plants_list_SLA, -mean_value)
 
 
 # Inserts results into Vascular_plants_list
 Vascular_plants_list_SLA <- merge(Vascular_plants_list_SLA, resolved_SLA_mean, by = "species", all.x = TRUE)
+
 
 
 
