@@ -7,11 +7,13 @@
 install.packages(readr)    
 install.packages(tidyverse)    
 install.packages(taxize)   
+install.packages(bdc)   
 
 library(readr)    
 library(tidyverse)    
 library(taxize)   
-
+library(bdc)
+  
 #STEP 2: IMPORT THE TRY DATA
 
 data <- read_delim("FILE NAME.txt", delim = "\t") 
@@ -365,6 +367,7 @@ Vascular_plants_list_SLA <- select(Vascular_plants_list_SLA, -mean_value)
 
 # Inserts results into Vascular_plants_list
 Vascular_plants_list_SLA <- merge(Vascular_plants_list_SLA, resolved_SLA_mean, by = "species", all.x = TRUE)
+
 
 
 
