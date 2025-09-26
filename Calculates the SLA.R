@@ -16,6 +16,9 @@ library(taxize)
 
 data <- read_delim("FILE NAME.txt", delim = "\t") 
 
+#Isolate the study species 
+names <- Vascular_plants_list$species
+
 #STEP 3: SELECT THE SLA TRAIT AND EXACT THE SPECIES NAMES
 
 SLA <- subset(data, TraitName == "Leaf area per leaf dry mass (specific leaf area, SLA or 1/LMA): petiole included")
@@ -24,9 +27,9 @@ SLA_unique <- as.data.frame(SLA_unique)
 SLA_EX<-SLA_unique %>% filter(!SLA_unique %in% names)
 
 
-#STEP 4: RESOLVE THE SPECIES NAMES SO THAT WILL CORRESPONSE TO Vascular_plants_list FORMAT
+#STEP 4: RESOLVE THE SPECIES NAMES SO THAT THEY WILL CORRESPOND TO Vascular_plants_list FORMAT
 
-#Seporate the names into subeset for 1000 row, this is to speed up the proccess
+# Separate the names into subsets for 1000 rows, this is to speed up the process
 #And to check that each subset.
 subset1_row <- 1:1000
 subset2_row <- 1001:2000
@@ -116,7 +119,7 @@ names_harmonizationSLA <-
 write.csv(names_harmonization, "names_harmonizationSLA.csv")
 
 
-#STEP 5:FILTER TRY DATA FOR STUDY SPECIES USING Vascular_plants_list
+#STEP 5:FILTER TRY DATA FOR THE STUDY SPECIES USING Vascular_plants_list
 
 #Isolate the study species 
 names <- Vascular_plants_list$species
@@ -129,7 +132,7 @@ SLA_EX_in<- resolved_namesSLA %>% filter(`Accepted names` %in% names)
 SLA_in <- SLA_unique %>% filter(SLA_unique %in% names)
 
 
-#Extract and standardize labels
+#Extract and standardise labels
 SLA_EX_in_AN <- as.data.frame(SLA_EX_in$`Accepted names`)
 SLA_EX_in_AN <-SLA_EX_in_AN %>%
   rename(Accepted_names = `SLA_EX_in$\`Accepted names\``)
@@ -142,7 +145,7 @@ SLA_in_AN <-SLA_in_AN %>%
 Accepted_names<-rbind(SLA_EX_in_AN, SLA_in_AN)
 
 
-# Extract and standardize
+# Extract and standardise
 SLA_EX_in_ID <- as.data.frame(SLA_EX_in$`Species names`)
 SLA_EX_in_ID <- SLA_EX_in_ID %>%
   rename(AccSpeciesName = `SLA_EX_in$\`Species names\``)
@@ -171,7 +174,7 @@ resolved_SLA_mean <- resolved_SLA_TRY %>%
   group_by(Accepted_names) %>%
   summarize(SLA = mean(StdValue, na.rm = TRUE))
 
-# standardize label
+# standardise label
 colnames(resolved_SLA_mean)[colnames(resolved_SLA_mean) == "Accepted_names"]<- "species"
 
 # Inserts results into Vascular_plants_list
@@ -180,7 +183,7 @@ Vascular_plants_list_SLA <- merge(Vascular_plants_list_SLA, resolved_SLA_mean, b
 
 ### ------ BIEN -------- ###
 
-#  STEP 6: EXTACT THE SLA BIEN TO FILL IN THE GAPS 
+#  STEP 6: EXTRACT THE SLA BIEN TO FILL IN THE GAPS 
   
   BIEN_TL<-BIEN_trait_list()
   
@@ -193,15 +196,15 @@ BIEN_TT<-BIEN_trait_trait(
 )
 
 
-# STEP 7: SELECT THE SLA TRAIT AND EXACT THE SPECIES NAMES
+# STEP 7: SELECT THE SLA TRAIT AND EXTRACT THE SPECIES NAMES
 
 SLA_unique <- unique(SLA_df$verbatim_scientific_name)
 SLA_unique <- as.data.frame(SLA_unique)
 SLA_EX<- SLA_unique %>% filter(!SLA_unique %in% names)
 
-# STEP 8: RESOLVE THE SPECIES NAMES SO THAT WILL CORRESPONSE TO Vascular_plants_list FORMAT
+# STEP 8: RESOLVE THE SPECIES NAMES SO THAT THEY WILL CORRESPOND TO Vascular_plants_list FORMAT
 
-#Seporate the names into subeset for 1000 row, this is to speed up the proccess
+# Separate the names into subsets for 1000 rows, this is to speed up the process
 #And to check that each subset.
 
 
@@ -258,7 +261,7 @@ SLA_in_AN <- SLA_in_AN %>%
 #Combine all accepted names
 Accepted_names<-rbind(SLA_EX_in_AN, SLA_in_AN)
 
-# Extract and standardize
+# Extract and standardise
 
 SLA_EX_in_ID <- as.data.frame(SLA_EX_in$user_supplied_name)
 SLA_EX_in_ID <- SLA_EX_in_ID %>%
@@ -279,7 +282,7 @@ SLA_Accepted_names_BIEN <- cbind(verbatim_scientific_name, Accepted_names)
 resolved_SLA<- SLA_df %>% left_join(SLA_Accepted_names_BIEN, by = "verbatim_scientific_name")
 
 resolved_SLA <- resolved_SLA[complete.cases(resolved_SLA$Accepted_names), ]
-#m2 kg-1 to mm2 mg-1 are the same units going change them for SLA to mm2 mg-1
+#m2 kg-1 to mm2 mg-1 are the same units, going to  change them for SLA to mm2 mg-1
 write.csv(resolved_SLA, "resolved_SLA_BIEN1.csv")
 
 #STEP 9: CALCULATE THE MEAN SLA FROM BIEN
@@ -314,7 +317,7 @@ SLA_unique <- as.data.frame(SLA_unique)
 SLA_EX<- SLA_unique %>% filter(!SLA_unique %in% names)
 names(SLA_EX) <- "species"
 
-#STEP 13: RESOLVE THE SPECIES NAMES SO THAT WILL CORRESPONSE TO Vascular_plants_list FORMAT
+#STEP 13: RESOLVE THE SPECIES NAMES SO THAT THEY WILL CORRESPOND TO Vascular_plants_list FORMAT
 resolve_SLA_EX <- SLA_EX$species  %>% gnr_resolve(data_source_ids = c(167), with_canonical_ranks=T)
 
 #Copies the column matched_name2 (resolved names) into a new column FillAccepted_names.
@@ -354,7 +357,7 @@ resolved_SLA_mean <- resolved_SLA %>%
   group_by(Accepted_names) %>%
   summarize(mean_value = mean(`single value [mm^2/mg]`, na.rm = TRUE))
 
-# standardize label
+# standardise label
 resolved_SLA_mean <- resolved_SLA_mean %>%
   rename(species = Accepted_names)
 VasTraitWP_ALDMC_LEDA <- select(VasTraitWP_ALDMC_LEDA, -mean_value)
@@ -362,5 +365,6 @@ VasTraitWP_ALDMC_LEDA <- select(VasTraitWP_ALDMC_LEDA, -mean_value)
 
 # Inserts results into Vascular_plants_list
 Vascular_plants_list_SLA <- merge(Vascular_plants_list_SLA, resolved_SLA_mean, by = "species", all.x = TRUE)
+
 
 
