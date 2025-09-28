@@ -38,7 +38,7 @@ Note - The traits can be calculated in any order, but to produce a single file o
 4. Plant height
 5. dispersal modes
    
-# Important - check the units within the different databases being used, to ensure they match using conversions.
+ Important - check the units within the different databases being used, to ensure they match using conversions.
 
 ## Imputation Process
 Note— m represents the number of decision trees and can be changed based on the percentage of missing trait information.
