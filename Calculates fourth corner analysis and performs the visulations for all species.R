@@ -1,13 +1,12 @@
-# The following script describes how preform fourth corner analysis and the visualations for all the studied species 
-# Note species traits were seporated in to native status in excel prior to the analysis
-# The species occurrences (species_occ file) was generated using Botentical Society of Britain and Ireland - see species occurrence script
-# The landscape features (Landscapes_fea) was generated using Edina Digimap, OS ordnance survey and research from Bailey et al.  (2017)  - see landscape feature branch
-# The species traits (species_Tra) was generated using TRY, BIEN, LEDA and BROT - see species trait branch
-
+# The following script describes how to perform fourth corner analysis and the visualisations for all the studied species 
+# Note: Species traits were separated into native status in Excel prior to the analysis
+# The species occurrences (species_occ file) were generated using Botanical Society of Britain and Ireland - see species occurrence script
+# The landscape features (Landscapes_fea) were generated using Edina Digimap, OS ordnance survey and research from Bailey et al.  (2017)  - see landscape feature branch
+# The species traits (species_Tra) were generated using TRY, BIEN, LEDA and BROT - see species trait branch.
 
 ### ALL STUDY SPECIES ### -----
 
-#STEP 1: INSTALL AND LOAD PACKAGES
+#STEP 1: Install and Load Packages
 
 install.packages("ade4")
 library(ade4)
@@ -24,13 +23,13 @@ library(ggtext)
 install.packages("stringr")
 library(stringr)
 
-# STEP 2: REMOVE THE UNQIUE ID COLUMN FROM THE DATASET 
+# STEP 2: Eliminate the unique ID column from the dataset
 species_occ_rm_id <- species_occ
 species_occ_rm_id <- species_occ_rm_id[, -1]
 species_Tra <- species_Tra[, -1]
 species_Tra <- data.frame(lapply(species_Tra, as.numeric))
 
-# STEP 3: CREATE A LIST OF DATASETS 
+# STEP 3: Create a list of datasets
 
 dataset_list <- list(
   Envi = Landscapes_fea,
@@ -43,26 +42,26 @@ FCA2 <- fourthcorner(dataset_list$Envi, dataset_list$abu, dataset_list$traits,nr
 FCA4 <- fourthcorner(dataset_list$Envi, dataset_list$abu, dataset_list$traits,nrepet=999, modeltype=4)
 four.comb <- combine.4thcorner(FCA2, FCA4)
 
-#STEP 5: RETRIEVE THE PEARSON CORRELATIONS AND SIGNIFICANCE 
+#STEP 5: Retrieve the Pearson correlations and their significance levels.
 
 FCA <- summary(four.comb)
 
-#STEP 6: SAVE AND INSPECT THE FILE
+#STEP 6: Save the file and check its contents.
 write.csv(FCA, "FCA_1km.csv")
 
-#STEP 7: ISOLATE THE LANDSCAPE FEATURES AND SPECIES TRAITS TO SEPORATE COLUMNS 
+#STEP 7: Separate the landscape features and species traits into distinct columns.
 split <- strsplit(FCA_1km$Test, "/")
 FCA_1km$Land <- sapply(split, `[`, 1)
 FCA_1km$Trait <- sapply(split, `[`, 2)
 
 
 
-#STEP 8: ADD THE ANONATION FOR THE SIGNIFICANGE
+#STEP 8: Add an annotation for significant results.
 FCA_1km$Significant <- ifelse(FCA_1km$Pvalue < 0.01, "**", 
                                         ifelse(FCA_1km$Pvalue < 0.05, "*", ""))
 
 
-#STEP 9: SUBSET FOR THE SIGNIFICANT CORRELATIONS
+#STEP 9:Subset for the Significant Correlations.
 
 FCA_1km_Significant <- FCA_1km %>% filter(Significant %in% c("*", "**"))  # Adjust condition if needed
 
@@ -82,13 +81,13 @@ FCA_1km_Significant <- FCA_1km_Significant %>%
   mutate(Land_Colored = factor(Land_Colored, levels = unique(Land_Colored)))  
 
 
-#STEP 10: ORDER THE SPECIES TRAITS ON THE X-AXIS
+#STEP 10: Arrange the species traits along the X-axis.
 FCA_1km_Significant <- FCA_1km_Significant %>%
   mutate(Trait = factor(Trait, levels = c(" Aneochory_Chameachor", " Autochor",
                                           " Hemerochor", " Hydrochory"," Zoochor", " Seed_Mass.y",
                                           " LDMC_or", " plant_hieght", " SLA_or")))
 
-#STEP 11: CREATES A FOURTH CORNER ANALYSIS GRAPH WITH THE ONLY THE SIGNIFICANT RESULT
+#STEP 11: Create a fourth corner analysis graph that includes only the significant results.
 
 library(stringr)
 
@@ -137,7 +136,7 @@ ggplot(FCA_1km_Significant, aes(x = Trait, y = Land_Colored, fill = Obs)) +
     axis.title.y = element_text(size= 20, face="bold"))
 
 
-# OPTIONAL TO PLOT ALL RESULTS
+# OPTIONAL PLOT FOR ALL THE RESULTS
 
 
 ggplot(FCA_1km, aes(x = Trait, y = Land, fill = Obs)) +
@@ -151,7 +150,7 @@ ggplot(FCA_1km, aes(x = Trait, y = Land, fill = Obs)) +
     guide = guide_colorbar(
       barwidth = 1, 
       barheight = 10
-    )  # Adjust the size of the color bar
+    )  # Adjust the size of the colour bar
   ) +
   labs(title = "Pearson Correlation Plot For Vascular plants") +
   theme_minimal() +
@@ -161,5 +160,6 @@ ggplot(FCA_1km, aes(x = Trait, y = Land, fill = Obs)) +
     legend.text = element_text(angle = 0)  # Ensure legend text is not rotated
   ) +
   geom_text(aes(label = Significant), color = "black", size = 10, vjust = 0.5)
+
 
 
