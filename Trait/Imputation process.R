@@ -1,5 +1,5 @@
-#This following script describes how to impute the missing trait values
-# note combine trait set is referred to as 
+# The following script describes how to impute the missing trait values
+# note combined trait set is referred to as 
 # Vascular_plants_list_Traits_ALDMC_SLA_LEDA_SM_PDS
 
 #STEP 1: INSTALL AND LOAD 
@@ -25,3 +25,4 @@ imp2 <- mice(VAST_IMPUTATE, method = "rf", m = 10) #NOTE - m can be changes depe
 complete_data <- complete(imp2)
 
 write.csv(complete_data, "TRAIT_data.csv")
+
