@@ -1,9 +1,8 @@
-## The following script describes how preform fourth corner analysis for native status following fridman and dunn test 
-# Note species traits were seporated in to native status in excel prior to the analysis
-# The species occurrences (species_occ file) was generated using Botentical Society of Britain and Ireland - see species occurrence script
-# The landscape features (Landscapes_fea) was generated using Edina Digimap, OS ordnance survey and research from Bailey et al.  (2017)  - see landscape feature branch
-# The species traits (species_Tra) was generated using TRY, BIEN, LEDA and BROT - see species trait branch
-
+## The following script describes how to perform fourth corner analysis for native status, followed by the Friedman and Dunn test 
+# Note: Species traits were separated into native status in Excel prior to the analysis
+# The species occurrences (species_occ file) were generated using Botanical Society of Britain and Ireland - see species occurrence script
+# The landscape features (Landscapes_fea) were generated using Edina Digimap, OS ordnance survey and research from Bailey et al.  (2017)  - see landscape feature branch
+# The species traits (species_Tra) were generated using TRY, BIEN, LEDA and BROT - see species trait branch
 
 
 #STEP 1: INSTALL AND LOAD PACKAGES
@@ -123,7 +122,7 @@ FCANeo <- summary(four.comb_Neo_)
 
 write.csv(FCANeo, "FCANeo3.csv")
 
-# STEP 17:ADD ANONATION TO IDENTIFY THE NATIVE STATUS
+# STEP 17:ADD ANNOTATION TO IDENTIFY THE NATIVE STATUS
 
 FCAaro3$GROUP <- "ARO"
 FCANeo3$GROUP <- "NEO"
@@ -188,4 +187,5 @@ for (trait in unique(NS_ANALYSIS$Trait)) {
   # Save each plot as a PNG file
   ggsave(paste("plot_", trait, ".png", sep = ""), plot, width = 6, height = 4, units = "in")
 }
+
 
