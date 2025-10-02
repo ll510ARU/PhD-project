@@ -1,7 +1,7 @@
-#The following script describes how to preform RLQ analysis and create visualasation of the relationships between species traits and the landscapes
-# The species occurrences (species_occ file) was generated using Botentical Society of Britain and Ireland - see species occurrence script
-# The landscape features (Landscapes_fea) was generated using Edina Digimap, OS ordnance survey and research from Bailey et al.  (2017)  - see landscape feature branch
-# The species traits (species_Tra) was generated using TRY, BIEN, LEDA and BROT - see species trait branch
+#The following script describes how to perform RLQ analysis and create visualisation of the relationships between species traits and the landscapes
+# The species occurrences (species_occ file) were generated using Botanical Society of Britain and Ireland - see species occurrence script
+# The landscape features (Landscapes_fea) were generated using Edina Digimap, OS ordnance survey and research from Bailey et al.  (2017)  - see landscape feature branch
+# The species traits (species_Tra) were generated using TRY, BIEN, LEDA and BROT - see species trait branch
 
 #STEP 1: INSTALL AND LOAD THE PACKAGES
 
@@ -9,12 +9,12 @@ install.packages("ade4")
 library("ade4")
 
 
-#STEP 2: REMOVE THE ID COLUMN, CREATE VECTOR OF THE MONAD LOCATIONS AND ORDER THE SPECIES NAMES ALPHEBETICALLY
+#STEP 2: REMOVE THE ID COLUMN, CREATEA  VECTOR OF THE MONAD LOCATIONS AND ORDER THE SPECIES NAMES ALPHABETICALLY
 species_occ <- species_occ[, -1]
 locations<- species_occ$Monad
 Spin_D <- species_occ[, order(colnames(species_occ))]
 
-#STEP 3: CREATE A MATICES OF THE SPECIES AND MONAD LOCATIONS
+#STEP 3: CREATE A MATRIX OF THE SPECIES AND MONAD LOCATIONS
 Spin_D<-as.matrix(Spin_D)
 
 
@@ -127,6 +127,7 @@ ggplot() +
   
   # Plot title bold
   theme(plot.title = element_text(face = "bold"))
+
 
 
 
