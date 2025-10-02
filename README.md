@@ -7,7 +7,7 @@ The repository contains the scripts used to generate the following: Understandin
 3. Landscape features
 4. Analysis
    
-Please be aware that there are several steps that were performed manually in either Excel or QGIS
+Please be aware that several steps were performed manually in either Excel or QGIS
 ### Species occurrences folder contains calculating species occurrences, resolving species names and removing crop species ####
 Note - To efficiently calculate species occurrence, the following working directories were created before running the code
 1. Original_Files - the individual occurrence records from BSBI are saved as CSV files
@@ -20,13 +20,13 @@ Note - To efficiently calculate species occurrence, the following working direct
 7.Intrum_Files - description: the individual occurrence records convert site × species matrix into a species × site matrix
 8.resolved_summerised_species_names_wide - description: the individual occurrence records with summerised resolved species names, no duplicates
 
-This script also describes how to resolve the species names and but does not remove the hybrids or crops. 
+This script also describes resolving the species names, but does not remove the hybrids or crops. 
 
 Manual steps include - Checking unresolved species in the World Checklist of Vascular Plants database.
 
 ## Removing the crop species from the study species 
 
-Note - common crop species were sourced from  the European Search Catalogue for Plant Genetic Resources.
+Note - common crop species were sourced from the European Search Catalogue for Plant Genetic Resources.
 
 ### Corresponding Species traits folder contains how the individual traits were calculated and the imputation process 
 ## Species traits 
@@ -38,13 +38,14 @@ Note - The traits can be calculated in any order, but to produce a single file o
 4. Plant height
 5. dispersal modes
    
- Important - check the units within the different databases being used, to ensure they match using conversions.
+ Important - please check the units within the different databases being used, to make sure they match using conversions.
 
 ## Imputation Process
 Note— m represents the number of decision trees and can be changed based on the percentage of missing trait information.
 
 ###  Landscape features folder contains the individual landscape feature scripts and how they are all joined together
-Note - Before starting any of the scripts, the data was gathered manually in QGIS, where a whole map of Great Britain was generated, and the area of the landscape features was calculated. Other manual steps include summarising the superficial deposit sources using the British Geological Society Lexicon of Named Rock Units (2020).
+Note: Before starting any of the scripts, the data was gathered manually in QGIS, where a whole map of Great Britain was generated, and the area of the landscape features was calculated. Other manual steps include summarising the superficial deposit sources using the British Geological Society Lexicon of Named Rock Units (2020).
 
 ### The Analysis folder contains a script for calculating the fourth corner analysis, the Friedman test, the Dunn test, and graph visualisations.
 Note—There are two scripts for the fourth corner analysis, one for all species and one for each native species. 
+
