@@ -1,4 +1,4 @@
-#This following script describes how sla was generated from TRY, BIEN, BROT 
+# The following script describes how sla was generated from TRY, BIEN, BROT 
 # note combine sla together use dataset with 
 #all the resolved species names and crops removed (Vascular_plants_list)
 
@@ -283,3 +283,4 @@ write.csv(TR8_HIEGHT, "TR8_HIEGHT.csv")
 #STEP 10: STANDARDISE LABEL AND ADD THE RESULT TO Vascular_plants_list_Traits
 colnames(TR8_HIEGHT)[colnames(TR8_HIEGHT) == "...1"] <- "species"
 Vascular_plants_list_Traits_ALDMC_SLA_LEDA_SM_PH_BIEN_TR8 <- merge(Vascular_plants_list_Traits_ALDMC_SLA_LEDA_SM_PH_BIEN, TR8_HIEGHT, by = "species", all.x = TRUE)
+
