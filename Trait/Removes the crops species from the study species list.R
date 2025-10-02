@@ -1,16 +1,16 @@
 #The following script explains how to remove the crop species using .... after resolving the names
-# Note Final_species_list is the file has the resolved species names generated from R script named species occurrence.
+# Note: Final_species_list is the file that has the resolved species names generated from the R script named species occurrence.
 
 
-#STEP 1: Create a new column with the combine genus and species of the crop species.
+#STEP 1: Create a new column with the combined genus and species of the crop species.
 
 Crop_speciesGBR$SpeciesName <- paste(Crop_speciesGBR$GENUS, Crop_speciesGBR$SPECIES, sep = " ")
 
-#STEP 2: Keep only the one copy of the species names and save the list for referrence.
+#STEP 2: Keep only one copy of the species names and save the list for reference.
 data_unique <- unique(Crop_speciesGBR)
 write.csv(data_unique, "crop2_unique.csv")
 
-#STEP 3:Seporate the names into subeset for 1000 row, this is to speed up the proccess
+#STEP 3: Separate the names into subsets for 1000 rows, this is to speed up the process
 #And to check that each subset.
 subset1_row <- 0:1000
 subset2_row <- 1001:2000
@@ -353,3 +353,4 @@ Vascular_plants_list <- Vascular_plants_list %>%
 write.csv(Vascular_plants_list, "Vascular_plants_corrected_list_crops_removed.csv")
 
 # Note that before the fourth corner the crop species were remove from the species occurrence and traits.
+
