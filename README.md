@@ -2,9 +2,9 @@ The repository contains the scripts used to generate the following: Understandin
 
 # Folders
 1. Species occurrences sourced from the Botanical Society of Britain and Ireland (BSBI)
-2. Corresponding Species traits sourced from the TRY, Botanical Information and Ecology Network (BIEN), life history traits of the Northwest European flora
+2. Traits and functional diversity - The data collections of the corresponding Species traits sourced from the TRY, Botanical Information and Ecology Network (BIEN), life history traits of the Northwest European flora and how functional diversity was calculated. 
 (LEDA) and TR8
-3. Landscape features
+3. Landscape features and Geodiversity
 4. Analysis
    
 Please be aware that several steps were performed manually in either Excel or QGIS
