@@ -46,6 +46,6 @@ Note— m represents the number of decision trees and can be changed based on th
 ###  Landscape features folder contains the individual landscape feature scripts and how they are all joined together
 Note: Before starting any of the scripts, the data was gathered manually in QGIS, where a whole map of Great Britain was generated, and the area of the landscape features was calculated. Other manual steps include summarising the superficial deposit sources using the British Geological Society Lexicon of Named Rock Units (2020).
 
-### The Analysis folder contains a script for calculating the fourth corner analysis, the Friedman test, the Dunn test, and graph visualisations.
+### The Analysis folder contains a script for calculating the fourth corner analysis, the Friedman test, the Dunn test, GAM model, univeriate PERMANOVA and graph visualisations.
 Note—There are two scripts for the fourth corner analysis, one for all species and one for each native species. 
 
