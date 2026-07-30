@@ -597,6 +597,6 @@ Occur<-bind_cols(Occurance_Freq_years1km$X, sample_assessment)
 names<- "keep"
 Keeps<- Occur %>% filter(assessment %in% names)
 
-write.csv(Keeps, "Occurance_mean_years1km_well_sampliedcorrected_Freq.csv")
+write.csv(Keeps, "Occurance_mean_years1km_well_sampliedcorrected_PA.csv")
 
 
