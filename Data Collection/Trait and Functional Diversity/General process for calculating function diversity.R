@@ -1,6 +1,6 @@
 # The following script describes how to calculate functional dispersion and functional richness using the package FD at a given resolution and species group
 # The species occurrences that well sampled (well_sampled_species_occ file) were generated using Botanical Society of Britain and Ireland - see species occurrence script
-#The species traits (species_Tra) were generated using TRY, BIEN, LEDA and BROT - see species trait branch
+#The species traits (TRAIT_data) were generated using TRY, BIEN, LEDA and BROT - see species trait branch
 
 
 # STEP 1: Check that well sampled locations is confined to the given resolution
@@ -13,8 +13,8 @@ well_sampled_species_occ_filter <-
 # STEP 2: Set row names of trait matrix in order of the accepted names of species_Tra and well_sampled_species_occ
 #and convert the datasets to matrixes 
 
-# remove the ID column of species_Tra
-traits_data <- species_Tra[,-1]
+# remove the ID column of TRAIT_data
+traits_data <- TRAIT_data[,-1]
 
 # Set row names
 rownames(traits_data) <- c(species_Tra$Accepted_names)
@@ -72,4 +72,5 @@ FDM <- FDM[FDM$FRIC != 0, ]
 write.csv(FDM, "FDM_STANDISED_NO_ZEROS.csv")
 
 # STEP 8: Repeat this process for the remaining resolutions and species groups (e.g native species at the 10km and 1km resolution)
-#by subsitituting well_sampled_species_occ  and species_Tra
+#by subsitituting well_sampled_species_occ  and TRAIT_data
+
