@@ -94,7 +94,7 @@ resolved_PDS <- resolved_PDS[complete.cases(resolved_PDS$Accepted_names), ]
 # summerised the disperal modes
 resolved_PDS_mean <- resolved_PDS %>%
   group_by(Accepted_names) %>%
-  summarize(disperal_method = paste(trait_value, collapse = " | "))
+  summarize(disperal_method = paste(trait_value, collapse = " / "))
 
 # Inserts results into Vascular_plants_list
 resolved_PDS_mean <- resolved_PDS_mean %>%
