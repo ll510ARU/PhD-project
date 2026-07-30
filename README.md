@@ -6,7 +6,8 @@ The repository contains the scripts used to generate the following: Understandin
 (LEDA) and TR8
 3. Landscape features and Geodiversity
 4. Analysis
-   
+
+# Data Collection
 Please be aware that several steps were performed manually in either Excel or QGIS
 ### Species occurrences folder contains calculating species occurrences, resolving species names and removing crop species ####
 Note - To efficiently calculate species occurrence, the following working directories were created before running the code
