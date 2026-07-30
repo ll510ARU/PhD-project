@@ -9,10 +9,10 @@
 
 #4.Add_missing_species description, will have the he individual occurrence records with added species
 #5.changed_species - description, will have the individual occurrence records with no artifacts 
-#6.Ordered_species - description, will have the individual occurrence records with ordered alphebtically species names
+#6.Ordered_species - description, will have the individual occurrence records with ordered alphabetically species names
 #7.Intrum_Files - description, will have the individual occurrence records converts site × species matrix into a species × site matrix
-#Reason for the Intrum_Files is so possiable to converge columns with the same name 
-#8.resolved_summerised_species_names_wide description, will have the individual occurrence records with summerised resolved species names no duplicates
+#Reason for the Intrum_Files is so possible to converge columns with the same name 
+#8.resolved_summerised_species_names_wide description, will have the individual occurrence records with summarised resolved species names no duplicates
 
 #STEP 1: EXTRACT THE SPECIES, LOCATION AND DATE COLUMNS
 
