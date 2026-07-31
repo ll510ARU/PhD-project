@@ -1,5 +1,5 @@
 #The following script explains how to remove the crop species using .... after resolving the names
-# Note: Final_species_list is the file that has the resolved species names generated from the R script named species occurrence.
+# Note: Final_species_list (Vascular_plants_list) is the file that has the resolved species names generated from the R script named species occurrence.
 
 
 #STEP 1: Create a new column with the combined genus and species of the crop species.
@@ -345,12 +345,11 @@ names_har1<- bdc_query_names_taxadb(
 
 #STEP 6: reove the crop species from the study species list 
 names_to_remove <- c(crop2_unique$`Accepted names`)
-Vascular_plants_corrected_list$species
 # Remove rows with names in the list
 Vascular_plants_list <- Vascular_plants_list %>%
   filter(!species %in% names_to_remove)
 
-write.csv(Vascular_plants_list, "Vascular_plants_corrected_list_crops_removed.csv")
+write.csv(Vascular_plants_list, "Vascular_plants_list.csv")
 
 # Note that before the fourth corner the crop species were remove from the species occurrence and traits.
 
