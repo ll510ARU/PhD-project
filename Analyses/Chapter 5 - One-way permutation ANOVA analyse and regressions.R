@@ -1,4 +1,4 @@
-## The script describes pipline code for the Univerate PERMANOVA analysis of functional diversity across native status in protected and non-protected areas for following datasets
+## The script describes pipline code for the one-way permutation ANOVA analysis of functional diversity across native status in protected and non-protected areas for following datasets
 # The datasets generated are for all protected areas (FD_GEO_PA_PA_SOURCE_DES_50_ALL_DATA), the British designate protected areas (FD_GEO_PA_PA_SOURCE_DES_50_EXO_DATA) 
 # and the IUCN framework (FD_GEO_PA_IUCN_50_WMARINE_EXD_PRO_IUCN_DATA).
 # The visualisations of Univerate PERMANOVA using geom_violin plots.
@@ -31,7 +31,7 @@ listsets <- list(FD_GEO_PA_PA_SOURCE_DES_50_ALL_DATA = FD_GEO_PA_PA_SOURCE_DES_5
   FD_GEO_PA_IUCN_50_WMARINE_EXD_PRO_IUCN_DATA = FD_GEO_PA_IUCN_50_WMARINE_EXD_PRO_IUCN_DATA,
   FD_GEO_PA_PA_SOURCE_DES_50_EXO_DATA = FD_GEO_PA_PA_SOURCE_DES_50_EXO_DATA)
 
-sink("ALL_PERMANOVAS_AND_DUNN_DATA.txt")
+sink("ALL_PERMUATION_ANOVAS_AND_DUNN_DATA.txt")
 
 for (name in names(listsets)) {
   lists <- listsets[[name]]
